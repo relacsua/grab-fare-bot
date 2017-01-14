@@ -1,0 +1,26 @@
+{
+  "name": "grab-fare-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot that tracks the amount you have spent in Grab rides",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "grab"
+  ],
+  "author": "Muhammad Muneer",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "dotenv": "^4.0.0",
+    "mongoose": "^4.7.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0"
+  }
+}
