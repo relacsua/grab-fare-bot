@@ -3,7 +3,7 @@
 import axios from 'axios';
 import mongoose from 'mongoose';
 import History from './models/history';
-import { getUpdate } from './api.js';
+import { getUpdate } from './utils/api.js';
 import CommandCenter from './command-center.js';
 import hi from './commands/hi.js';
 

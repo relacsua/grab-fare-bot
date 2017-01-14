@@ -1,6 +1,6 @@
 'use strict';
 
-import { sendMessage } from '../api.js';
+import { sendMessage } from '../utils/api.js';
 
 const hi = {
   key: /\/hi/,
@@ -9,7 +9,7 @@ const hi = {
     sendMessage({
       chat_id: chat.id,
       parse_mode: 'Markdown',
-      text: `Hey, *${ messager }*. ${ compliment['gsx$compliments']['$t'] }`
+      text: `Hey, *${ messager }*.`
     }); 
   }
 }
