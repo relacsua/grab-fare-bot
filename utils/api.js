@@ -3,15 +3,15 @@
 import axios from 'axios';
 
 const API = 'https://api.telegram.org/bot';
-const AUTH_TOKEN = process.env['AUTH_TOKEN'];
+const TELEGRAM_AUTH_TOKEN = process.env.TELEGRAM_AUTH_TOKEN;
 
-if (AUTH_TOKEN === undefined) {
-  console.log('AUTH_TOKEN cannot be empty');
+if (TELEGRAM_AUTH_TOKEN === undefined) {
+  console.log('TELEGRAM_AUTH_TOKEN cannot be empty');
   process.exit();
 }
 
 const instance = axios.create({
-  baseURL: `${API}${AUTH_TOKEN}`,
+  baseURL: `${API}${TELEGRAM_AUTH_TOKEN}`,
 });
 
 // Add a response interceptor

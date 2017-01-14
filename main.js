@@ -91,6 +91,6 @@ import hi from './commands/hi.js';
       clearInterval(telegramInterval);
     }
     const options = { server: { socketOptions: { keepAlive: 1 } } };
-    return mongoose.connect(process.env['MONGO_URL'], options).connection;
+    return mongoose.connect(process.env.MONGO_URL, options).connection;
   }
 }());
