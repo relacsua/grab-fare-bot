@@ -2,6 +2,7 @@
 
 import mongoose from 'mongoose';
 import Telegram from './processes/Telegram.js';
+import GrabFare from './processes/GrabFare.js';
 
 (function () {
   let intervals = [];
@@ -20,6 +21,7 @@ import Telegram from './processes/Telegram.js';
 
   function listen () {
     addProcess(Telegram, 1000);
+    addProcess(GrabFare, 60000);
   }
 
   function connect () {
