@@ -27,7 +27,7 @@ export function getReceipts() {
     gmail.users.messages.list({
       userId: 'me',
       q: 'subject:Your GRAB E-Receipt',
-      maxResults: 5
+      maxResults: 20
     }, (error, response) => {
       if (error) {
         return reject(error);
@@ -55,8 +55,8 @@ export function getReceiptInfo(id, additionalFields=[]) {
         const receipt = new Buffer(receiptData, 'base64').toString('ascii');
         const $ = cheerio.load(receipt);
         const header = $('td.produceTdLast>span').slice(0, 2);
-        receiptInfo.price = header[0].children[0].data;
-        receiptInfo.date = header[1].children[0].data;
+        receiptInfo.price = parseFloat(header[0].children[0].data.slice(4));
+        receiptInfo.date = new Date(header[1].children[0].data);
 
         if (additionalFields.length > 0) {
           const bookingDetails = $('.tdp5 span');
